@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import {ServicioService} from '../app/servicio.service';
 import { RouterModule } from '@angular/router';
+import { PrincipalComponent } from './componentes/principal/principal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
