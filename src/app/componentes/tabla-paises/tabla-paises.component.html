@@ -1,0 +1,26 @@
+<nav  class="navbar navbar-inverse">      
+    <div class="navbar-header">         
+                              
+      
+      <a  routerLink="/Principal">Inicio</a>
+    </div>       
+  
+</nav>
+
+<table style="width: 60%; margin: 5%;" class="table table-dark">
+
+    <thead>
+        <tr>
+          <th scope="col">País</th>
+          <th scope="col">capital</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pais of listaPaises">
+          <td scope="row">{{pais.name}}</td>
+          <td>{{pais.capital}}</td>      
+          
+        </tr>       
+      </tbody>
+</table>
