@@ -1,1 +1,9 @@
-<p>pelicula-listado works!</p>
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+    <div style="width: 55%;">
+        <app-tabla-pelicula (peli)="tomarPeliParaDetalle($event)" [listaPeliculas]="pelis" ></app-tabla-pelicula>
+    </div>
+
+    <div style="width: 40%; margin: 1rem;" *ngIf="hayPelicula">
+    <app-detalle-pelicula [pelicula]="peliSeleccionada" (borrarPeli)="tomarPeliParaBorrar($event)"></app-detalle-pelicula>
+    </div>
+</div>

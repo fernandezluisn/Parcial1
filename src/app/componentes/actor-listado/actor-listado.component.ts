@@ -17,7 +17,7 @@ export class ActorListadoComponent implements OnInit {
   martinaGuzman:actor;
   actorSeleccionado:boolean;
   actorS:actor;
-  pais;
+  paisS;
 
   constructor(private serv:ServicioService) {
     
@@ -54,7 +54,7 @@ export class ActorListadoComponent implements OnInit {
 
   tomarActorParaDetalles(actor){
     this.actorSeleccionado=true;
-    this.pais=this.hallarPais(actor.pais);
+    this.paisS=this.hallarPais(actor.pais);
     this.actorSeleccionadoT=actor;
   }
 }

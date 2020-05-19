@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { actor } from './clases/actor';
+import { pelicula } from './clases/pelicula';
 
 
 @Injectable({
@@ -12,8 +13,11 @@ export class ServicioService {
   private url = "https://restcountries.eu/rest/v2/region/americas";
   listaA:string;
   listaP;
+  listaPeliculas;
+
   constructor(private http:HttpClient) { 
         this.listaA="listaActores";
+        this.listaPeliculas="listaPeliculas";
     
         this.obtenerPaises().subscribe(element=>{    
       
@@ -76,5 +80,62 @@ registrarActor(actor1:actor):boolean{
   
   localStorage.setItem(this.listaA, JSON.stringify(jugadoresV));
   return true;
+}
+
+/////peliculas//////////////////
+
+traerPeliculas():pelicula[]{
+  let jugadoresV:pelicula[];
+  jugadoresV=JSON.parse(localStorage.getItem(this.listaPeliculas)); 
+  return jugadoresV;
+}
+
+checkListaPelis(peliculas:pelicula[], nombre:string, director:string):boolean{
+  let respuesta=false;
+  peliculas.forEach(element=>{
+    if(nombre==element.nombre && director==element.director)
+    {
+      respuesta=true;        
+    }
+  });
+  return respuesta;
+}
+
+registrarPelicula(pelicula1:pelicula):boolean{
+    
+  let peliculasV:pelicula[]; 
+  
+
+  peliculasV=JSON.parse(localStorage.getItem(this.listaPeliculas));
+  
+  if( (typeof peliculasV !== 'undefined') &&  (peliculasV!== null))
+  {            
+    if(this.checkListaPelis(peliculasV, pelicula1.nombre, pelicula1.director)==false)
+    {
+      localStorage.removeItem(this.listaPeliculas);      
+      peliculasV.push(pelicula1);        
+    }else{
+      return false;
+    }
+    
+  }else{
+    peliculasV=new Array();
+    peliculasV.push(pelicula1);      
+  }
+  
+  localStorage.setItem(this.listaPeliculas, JSON.stringify(peliculasV));
+  return true;
+}
+
+borrarPelicula(pelicula){
+  
+    let nuevaLista=this.traerPeliculas();
+    console.log("lista "+nuevaLista.length);
+    localStorage.removeItem(this.listaPeliculas);
+    let n=nuevaLista.indexOf(pelicula);
+    
+    nuevaLista.splice(n,1);
+    localStorage.setItem(this.listaPeliculas, JSON.stringify(nuevaLista));
+
 }
 }

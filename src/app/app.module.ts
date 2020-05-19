@@ -18,6 +18,7 @@ import {FormsModule} from '@angular/forms';
 import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
 import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
 import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor
     DetallePaisComponent,
     TablaActorComponent,
     TablaPeliculaComponent,
-    DetalleActorComponent
+    DetalleActorComponent,
+    DetallePeliculaComponent
     
   ],
   imports: [
