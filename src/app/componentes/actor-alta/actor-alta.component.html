@@ -1,1 +1,39 @@
-<p>actor-alta works!</p>
+
+<div style="flex-direction: row; display: flex; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; justify-content: stretch; ">
+    <DIV>
+    <form action="">
+        <label><b>Nombre</b></label>
+        <input   [(ngModel)]="nombre" type="text" placeholder="Ingresa nombre del actor" name="nombre" required>
+        <label><b>Apellido</b></label>
+        <input   [(ngModel)]="apellido" type="text" placeholder="Ingresa apellido del actor" name="apellido" required><br>
+        <label><b>Sexo</b></label><br>  
+        <select [(ngModel)]="sexo" name="SelectSexo" style="width: 70%;" class="custom-select">          
+            <option value=Mujer>Mujer</option>
+            <option value=Varon>Varón</option>            
+          </select>
+        <label>Nacionalidad. </label>
+        <div *ngIf="!hayPais" >{{paisSeleccionado.name}}</div>
+        <label for="">Fecha de nacimiento</label>
+        <input [(ngModel)]="fecha" name="fechaE" type="date" value="{{ fecha | date: 'yyyy-MM-dd' }}"><br>
+        <button (click)="subir()" type="button" class="btn btn-primary" style="margin-top:1rem">Subir</button>
+    </form>
+    </DIV>
+
+    
+        <div  style="height: 25rem;" [hidden]="hayPais" *ngIf="!hayPais" >
+            <app-detalle-pais [pais]="paisSeleccionado"></app-detalle-pais>
+        </div>  
+    
+</div>
+   
+<div style="width: 40%; margin-right: 4%;">
+        <app-tabla-paises (paisSeleccionado)="tomarPaisParaDetalles($event)"></app-tabla-paises>
+   </div>
+    
+    
+    
+    </div>
+
+
+

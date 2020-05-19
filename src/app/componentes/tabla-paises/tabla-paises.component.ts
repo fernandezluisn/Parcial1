@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {ServicioService} from '../../servicio.service';
-import { Pais } from '../../clases/pais';
+
 
 @Component({
   selector: 'app-tabla-paises',
@@ -9,24 +9,26 @@ import { Pais } from '../../clases/pais';
 })
 export class TablaPaisesComponent implements OnInit {
 
+  @Output() paisSeleccionado: EventEmitter<any>= new EventEmitter<any>();
+
   listaPaises;
   constructor(private service:ServicioService) { 
-    this.listaPaises=new Array();
-    
-    let p1: Pais[];
-    p1=new Array();
-    
-    
-    
+    this.listaPaises=new Array(); 
     
   }
 
   ngOnInit(): void {
-    this.service.obtenerPaises().subscribe(element=>{
+       
       
+      this.listaPaises=this.service.listaP;
+    
       
-      this.listaPaises=element;
-    });    
+  }
+
+  mostrarDetalles(pais)
+  {
+    
+    this.paisSeleccionado.emit(pais);
   }
 
 }

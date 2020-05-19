@@ -1,1 +1,10 @@
-<app-tabla-paises></app-tabla-paises>
+<div style="flex-direction: row; display: flex; justify-content: space-between;">
+<div style="width: 40%;">
+    <app-tabla-paises (paisSeleccionado)="tomarPaisParaDetalles($event)"></app-tabla-paises>
+</div>
+
+
+<div style="width: 35%; height: 30rem; margin-top: 3rem;" [hidden]="hayPais" *ngIf="!hayPais">
+    <app-detalle-pais [pais]="paisSeleccionado"></app-detalle-pais>
+</div>
+</div>

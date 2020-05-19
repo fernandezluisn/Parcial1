@@ -1,13 +1,6 @@
-<nav  class="navbar navbar-inverse">      
-    <div class="navbar-header">         
-                              
-      
-      <a  routerLink="/Principal">Inicio</a>
-    </div>       
-  
-</nav>
 
-<table style="width: 60%; margin: 5%;" class="table table-dark">
+
+<table style="margin: 5%;" class="table table-dark">
 
     <thead>
         <tr>
@@ -18,9 +11,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let pais of listaPaises">
-          <td scope="row">{{pais.name}}</td>
-          <td>{{pais.capital}}</td>      
-          
+          <td scope="row" (click)="mostrarDetalles(pais)">{{pais.name}}</td>
+          <td (click)="mostrarDetalles(pais)">{{pais.capital}}</td>      
+          <td (click)="mostrarDetalles(pais)"><img src="{{pais.flag}}" alt="1rem"></td>
+        
         </tr>       
       </tbody>
 </table>

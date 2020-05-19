@@ -9,6 +9,7 @@ import { RutasRoutingModule } from './rutas-routing.module';
   imports: [
     CommonModule,
     RutasRoutingModule
+    
   ]
 })
 export class RutasModule { }

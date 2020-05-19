@@ -13,6 +13,12 @@ import { PeliculaListadoComponent } from './componentes/pelicula-listado/pelicul
 import { PaisesListadoComponent } from './componentes/paises-listado/paises-listado.component';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+import {FormsModule} from '@angular/forms';
+import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
+import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +30,19 @@ import { HttpClientModule } from '@angular/common/http';
     ActorListadoComponent,
     PeliculaListadoComponent,
     PaisesListadoComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    DetallePaisComponent,
+    TablaActorComponent,
+    TablaPeliculaComponent,
+    DetalleActorComponent
     
   ],
   imports: [
     BrowserModule,
     RutasRoutingModule,
     RouterModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   exports:[RouterModule],
   providers: [ServicioService],

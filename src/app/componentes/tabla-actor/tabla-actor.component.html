@@ -1,0 +1,19 @@
+<table style="margin: 5%;" class="table table-dark">
+
+    <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Nacionalidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="mostrarDetalles(pais)" *ngFor="let pais of actoresT">
+          <td scope="row">{{pais.nombre}}</td>
+          <td >{{pais.apellido}}</td>     
+          <td >{{pais.pais}}</td>     
+          <td ><img class="actor" src="{{pais.foto}}" alt="1rem"></td>
+        
+        </tr>       
+      </tbody>
+</table>

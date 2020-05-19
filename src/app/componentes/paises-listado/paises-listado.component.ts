@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-paises-listado',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaisesListadoComponent implements OnInit {
 
-  constructor() { }
+  @Input() paisSeleccionado;
+  hayPais:boolean;
+  
+  
+  constructor() { 
+    this.hayPais=true;
+  }
 
   ngOnInit(): void {
   }
 
+  tomarPaisParaDetalles(pais)
+  {
+    this.hayPais=false;
+  this.paisSeleccionado=pais;   
+  }
 }
