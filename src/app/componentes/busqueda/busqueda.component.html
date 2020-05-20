@@ -1,1 +1,14 @@
-<p>busqueda works!</p>
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+
+<div style="width: 30%; margin-left: 2%">
+    <app-tabla-pelicula (peli)="tomarPeliParaDetalle($event)" [listaPeliculas]="peliculas"></app-tabla-pelicula>
+</div>
+<div style="width: 30%; margin-left: 2%" *ngIf="hayPelicula">
+    <app-tabla-actor [actoresT]="actores"></app-tabla-actor>
+</div>
+<div style="width: 30%; margin-left: 2%;" *ngIf="hayPelicula">
+    <app-detalle-pelicula [pelicula]="peliculaE"></app-detalle-pelicula>
+</div>
+
+</div>

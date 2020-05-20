@@ -12,25 +12,15 @@ export class ActorListadoComponent implements OnInit {
 
   @Input() actorSeleccionadoT;
   actores:actor[];
-  nicolasFurtado:actor;
-  claudioRissi:actor;
-  martinaGuzman:actor;
+  
   actorSeleccionado:boolean;
   actorS:actor;
   paisS;
 
-  constructor(private serv:ServicioService) {
+  constructor(private serv:ServicioService) {   
+
     
-
-    this.nicolasFurtado=new actor(1, "Nicolas", "Furtado", "masculino", "11-11-1991",  '../assets/nicolasF.jpg', "Uruguay");
-    this.claudioRissi=new actor(2, "Claudio", "Rissi",  "masculino","11-11-1993",  '../assets/claudioR.jpg', "Argentina");
-    this.martinaGuzman=new actor(3, "Martina", "Guzman",  "femenino","11-11-1995",  '../assets/martinaG.jpg', "Argentina");
-    this.actores=new Array();
     this.actorSeleccionado=false;
-    serv.registrarActor(this.claudioRissi);
-    serv.registrarActor(this.martinaGuzman);
-    serv.registrarActor(this.nicolasFurtado);
-
     this.actores=serv.traerActores();
     
    }

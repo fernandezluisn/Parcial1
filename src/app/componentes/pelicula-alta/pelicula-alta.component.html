@@ -1,2 +1,33 @@
 
-anda
+
+<div style="flex-direction: row; display: flex; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; justify-content: stretch; ">
+    <DIV style="display: flex; flex-direction: column; justify-content: center; ">
+
+        <h2 style="background-color: rgb(2, 1, 0); margin-top: 3rem;  color: white; border: rgb(50, 125, 155) 0.5rem solid;">Ingrese los datos de la nueva película en el cuadro y sus actores clickeando en la tabla.</h2>
+    <form action="">
+        <label><b>Nombre</b></label>
+        <input   [(ngModel)]="nombre" type="text" placeholder="Ingresa nombre de la película" name="nombre" required>
+        <label><b>Director</b></label>
+        <input   [(ngModel)]="director" type="text" placeholder="Ingresa nombre y apellido del director de la película" name="director" required><br>
+        <label for="">Actores del elenco</label>
+        <p *ngFor="let actor of actores">{{actor. nombre}} {{actor.apellido}}</p>
+        <label for="">Fecha de estreno</label>
+        <input [(ngModel)]="fecha" name="fechaE" type="date" value="{{ fecha | date: 'yyyy-MM-dd' }}"><br>
+        <button (click)="subir()" type="button" class="btn btn-primary" style="margin-top:1rem">Subir</button>
+    </form>
+    </DIV>
+
+    
+       
+    
+</div>
+   
+<div style="width: 40%; margin-right: 14%; margin-top: 10%;">
+    
+        <app-tabla-actor  (actorSeleccionado)="tomarActorParaDetalles($event)" [actoresT]="actoresPT"></app-tabla-actor>
+   </div>
+    
+    
+    
+    </div>
