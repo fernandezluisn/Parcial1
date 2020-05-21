@@ -20,10 +20,11 @@ export class PeliculaListadoComponent implements OnInit {
     this.hayPelicula=false;
 
     
-    this.pelis=servicio.traerPeliculas();
+    
    }
 
   ngOnInit(): void {
+    this.pelis=this.servicio.traerPeliculas();
   }
 
   
@@ -36,7 +37,7 @@ export class PeliculaListadoComponent implements OnInit {
 
   tomarPeliParaBorrar(pelicula){
     this.servicio.borrarPelicula(pelicula);
-    this.pelis.splice(pelicula);
+    
   }
 
 }

@@ -7,5 +7,5 @@
 <label >Población</label>
 <h3 style=" margin-left: 0.5rem; margin-right: 0.5rem;">{{pais.population}} habitantes.</h3><br>
 <img style="margin-left: 8.3rem;" src="{{pais.flag}}" alt=""><br>
-<button type="button" class="btn btn-danger" style="width: 10rem; margin-left: 5rem; border-radius: 1rem;" (click)="eliminarPais(pais)"> Deshabilitar país</button>
+<button type="button" class="btn btn-danger" style="width: 10rem; margin-left: 5rem; border-radius: 1rem;" (click)="eliminarPais(pais)" *ngIf="esLP"> Deshabilitar país</button>
 </div>

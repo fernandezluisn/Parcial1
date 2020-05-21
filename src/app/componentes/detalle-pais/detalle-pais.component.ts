@@ -9,6 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DetallePaisComponent implements OnInit {
   @Input() pais; 
   @Output() paisO:EventEmitter<any>=new EventEmitter<any>();
+  @Input() esLP:boolean;
   constructor() { }
   
   

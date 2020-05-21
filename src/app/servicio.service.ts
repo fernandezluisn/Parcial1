@@ -33,8 +33,16 @@ export class ServicioService {
 }
 
 
-deshabilitar(pais){
-
+deshabilitar(pais){ 
+  
+  console.log(this.listaP.lenght);
+  this.listaP.forEach(element=>{
+    if(element.name==pais.name && element.capital==pais.capital)
+    {
+      let n=this.listaP.indexOf(element);
+      this.listaP.splice(n,1);
+    }
+  });
 }
 
 /////////////////////////////////actores//////////////////////////////
@@ -132,9 +140,16 @@ borrarPelicula(pelicula){
     let nuevaLista=this.traerPeliculas();
     console.log("lista "+nuevaLista.length);
     localStorage.removeItem(this.listaPeliculas);
-    let n=nuevaLista.indexOf(pelicula);
     
-    nuevaLista.splice(n,1);
+    nuevaLista.forEach(element=>{
+      if(element.nombre==pelicula.nombre && element.director==pelicula.director)
+      {
+        let n=nuevaLista.indexOf(element);
+        nuevaLista.splice(n,1);
+      }
+    });
+    
+    
     localStorage.setItem(this.listaPeliculas, JSON.stringify(nuevaLista));
 
 }

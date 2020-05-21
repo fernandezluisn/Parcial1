@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-paises-listado',
@@ -11,7 +12,7 @@ export class PaisesListadoComponent implements OnInit {
   hayPais:boolean;
   
   
-  constructor() { 
+  constructor(private servicio: ServicioService) { 
     this.hayPais=true;
   }
 
@@ -22,5 +23,9 @@ export class PaisesListadoComponent implements OnInit {
   {
     this.hayPais=false;
   this.paisSeleccionado=pais;   
+  }
+
+  eliminarPais(pais){
+    this.servicio.deshabilitar(pais);
   }
 }
