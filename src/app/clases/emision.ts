@@ -1,14 +1,14 @@
-import { pelicula } from './pelicula';
+
 
 export class emision{
     
     fecha:string;
-    peliculas: pelicula[];
+    nombre: string;
     
    
 
-    constructor(pelis:pelicula[], fecha:string){
+    constructor(peli:string, fecha:string){
         this.fecha=fecha;
-        this.peliculas=pelis;
+        this.nombre=peli;
     }
 }

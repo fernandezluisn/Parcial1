@@ -68,10 +68,10 @@ export class HomeComponent implements OnInit {
 
     let emisiones:emision[]=new Array();
     let emisiones1:emision[]=new Array();
-    let emision1=new emision(peliculas, "2020-06-08");
-    let emision2=new emision(peliculas, "2020-06-09");
-    let emision3=new emision(peliculas1, "2020-06-18");
-    let emision4=new emision(peliculas1, "2020-06-28");
+    let emision1=new emision("Carancho", "2020-06-08");
+    let emision2=new emision("Porno para principiantes", "2020-06-09");
+    let emision3=new emision("Porno para principiantes", "2020-06-18");
+    let emision4=new emision("La novia del desierto.", "2020-06-28");
     emisiones.push(emision1);
     emisiones.push(emision3);
     emisiones1.push(emision2);

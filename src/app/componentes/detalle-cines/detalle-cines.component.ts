@@ -17,7 +17,7 @@ export class DetalleCinesComponent implements OnInit {
   
   ngOnInit(): void {
     
-    console.log("emis"+ this.emisiones);
+    
   }
  
 }

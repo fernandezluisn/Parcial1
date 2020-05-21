@@ -20,7 +20,7 @@ export class ServicioService {
   constructor(private http:HttpClient) { 
         this.listaA="listaActores";
         this.listaPeliculas="listaPeliculas";
-        this.listaPeliculas="listaCines";
+        this.listaCines="listaCines";
     
         this.obtenerPaises().subscribe(element=>{    
       

@@ -25,6 +25,10 @@ export class SalaDeCineComponent implements OnInit {
   agarraCine(cine:cine){
     this.cine=cine;
     this.cineE=cine.peliculas;
+    
+      cine.peliculas.forEach(element=>{
+        console.log(element.nombre);
+    });
     this.hayCine=true;
   }
 }
