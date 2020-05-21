@@ -1,0 +1,24 @@
+<div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+<div style="width: 60%; height: 100%;">
+    <h2 style="background-color: rgb(2, 1, 0); margin-top: 3rem;  color: white; border: rgb(50, 125, 155) 0.5rem solid;">Ingrese los datos del nuevo cine en el cuadro y sus peliculas clickeando en la tabla.</h2>
+    <form action="">
+        <label><b>Nombre</b></label>
+        
+        <input   [(ngModel)]="nombre" type="text" placeholder="Ingresa nombre del cine" name="nombre" required><br>
+
+        <label><b>Pais</b></label><br>
+        <input   [(ngModel)]="pais" type="text" placeholder="Ingresa pais del cine" name="director" required><br>
+        <label for="">Proyecciones del cine</label>
+        <div *ngIf="hayPelis">
+            <p *ngFor="let peli of emisiones" >{{peli. nombre}} dia {{peli.fecha}}</p>
+        </div>
+        
+        <label for="">Fecha de emision</label>
+        <input [(ngModel)]="fecha" name="fechaE" type="date" value="{{ fecha | date: 'yyyy-MM-dd' }}"><br>
+        <button (click)="subir()" type="button" class="btn btn-primary" style="margin-top:1rem">Subir</button>
+    </form>
+</div>
+<div style="width: 30%;">
+    <app-tabla-pelicula [listaPeliculas]="pelis" (peli)="agregarPeli($event)"></app-tabla-pelicula>
+</div>
+</div>

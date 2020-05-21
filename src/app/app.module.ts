@@ -22,6 +22,7 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
 import { SalaDeCineComponent } from './componentes/sala-de-cine/sala-de-cine.component';
 import { TablaCinesComponent } from './componentes/tabla-cines/tabla-cines.component';
 import { DetalleCinesComponent } from './componentes/detalle-cines/detalle-cines.component';
+import { AltaCineComponent } from './componentes/alta-cine/alta-cine.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DetalleCinesComponent } from './componentes/detalle-cines/detalle-cines
     DetallePeliculaComponent,
     SalaDeCineComponent,
     TablaCinesComponent,
-    DetalleCinesComponent
+    DetalleCinesComponent,
+    AltaCineComponent
     
   ],
   imports: [
