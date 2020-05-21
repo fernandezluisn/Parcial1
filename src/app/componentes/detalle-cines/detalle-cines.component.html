@@ -1,0 +1,11 @@
+<div class="cardP"> 
+    <h1 style="background-color: white; color: black; border-radius: 2rem; width: 10rem; margin-left: 5rem; margin-top: 1rem;">Pelicula</h1><br>
+<label >Nombre</label>
+<h2 style="margin-left: 0.5rem; margin-right: 0.5rem;">{{cineElegido.nombre}}</h2>
+
+<img class="actor" src="{{cineElegido.foto}}" alt=""><br>
+<label for="">peliculas en exibición</label>
+        <p *ngFor="let emision of emisiones">{{emision.pelicula.nombre}} dia {{emision.fecha}}</p>
+
+
+</div>

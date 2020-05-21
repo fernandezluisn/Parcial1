@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { actor } from './clases/actor';
 import { pelicula } from './clases/pelicula';
+import { cine } from './clases/cine';
 
 
 @Injectable({
@@ -14,10 +15,12 @@ export class ServicioService {
   listaA:string;
   listaP;
   listaPeliculas;
+  listaCines;
 
   constructor(private http:HttpClient) { 
         this.listaA="listaActores";
         this.listaPeliculas="listaPeliculas";
+        this.listaPeliculas="listaCines";
     
         this.obtenerPaises().subscribe(element=>{    
       
@@ -87,6 +90,50 @@ registrarActor(actor1:actor):boolean{
   }
   
   localStorage.setItem(this.listaA, JSON.stringify(jugadoresV));
+  return true;
+}
+
+//////////cines////////////////////
+traerCines():cine[]{
+  let jugadoresV:cine[];
+  jugadoresV=JSON.parse(localStorage.getItem(this.listaCines)); 
+  return jugadoresV;
+}
+
+checkListaCines(cines:cine[], nombre:string, pais:string):boolean{
+  let respuesta=false;
+  cines.forEach(element=>{
+    if(nombre==element.nombre && pais==element.pais)
+    {
+      respuesta=true;        
+    }
+  });
+  return respuesta;
+}
+
+registrarCine(cine1:cine):boolean{
+    
+  let cinesV:cine[]; 
+  
+
+  cinesV=JSON.parse(localStorage.getItem(this.listaCines));
+  
+  if( (typeof cinesV !== 'undefined') &&  (cinesV!== null))
+  {            
+    if(this.checkListaCines(cinesV, cine1.nombre, cine1.pais)==false)
+    {
+      localStorage.removeItem(this.listaCines);      
+      cinesV.push(cine1);        
+    }else{
+      return false;
+    }
+    
+  }else{
+    cinesV=new Array();
+    cinesV.push(cine1);      
+  }
+  
+  localStorage.setItem(this.listaCines, JSON.stringify(cinesV));
   return true;
 }
 

@@ -19,6 +19,9 @@ import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.compo
 import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
 import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+import { SalaDeCineComponent } from './componentes/sala-de-cine/sala-de-cine.component';
+import { TablaCinesComponent } from './componentes/tabla-cines/tabla-cines.component';
+import { DetalleCinesComponent } from './componentes/detalle-cines/detalle-cines.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
     TablaActorComponent,
     TablaPeliculaComponent,
     DetalleActorComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    SalaDeCineComponent,
+    TablaCinesComponent,
+    DetalleCinesComponent
     
   ],
   imports: [

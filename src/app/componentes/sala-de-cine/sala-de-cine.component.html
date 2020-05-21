@@ -1,0 +1,10 @@
+<div style="flex-direction: row; display: flex; justify-content: space-between;">
+    <div style="width: 40%;">
+        <app-tabla-cines [listaCines]="listaDeCines" (cineEmite)="agarraCine($event)"></app-tabla-cines>
+    </div>
+    
+    <div>
+        <app-detalle-cines style="width: 30%; margin-left: 5%;" [cineElegido]="cine" [emisiones]="cineE" *ngIf="hayCine"></app-detalle-cines>
+    </div>
+    
+    </div>

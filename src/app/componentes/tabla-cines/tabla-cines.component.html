@@ -1,0 +1,19 @@
+<table style="margin: 5%;" class="table table-dark">
+
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+          <th scope="col">País</th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cine of listaCines" (click)="mostrarDetalles(cine)">
+          <td scope="row" >{{cine.nombre}}</td>
+          <td >{{cine.pais}}</td>      
+          <td ><img class="actor" src="{{cine.foto}}" alt="1rem"></td>
+        
+        </tr>       
+      </tbody>
+</table>
