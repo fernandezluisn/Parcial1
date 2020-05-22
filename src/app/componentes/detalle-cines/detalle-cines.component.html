@@ -4,7 +4,7 @@
 <h2 style="margin-left: 0.5rem; margin-right: 0.5rem;">{{cineElegido.nombre}}</h2>
 
 <img class="actor" src="{{cineElegido.foto}}" alt=""><br>
-<label for="">peliculas en exibición</label>
+<label for="">peliculas en exhibición</label>
         <p *ngFor="let emision of emisiones">{{emision.nombre}} dia {{emision.fecha}}</p>
 
         <button type="button" class="btn btn-danger" style="width: 10rem; margin-left: 5rem; border-radius: 1rem;" (click)="eliminarCine(cineElegido)"> Deshabilitar cine</button>
