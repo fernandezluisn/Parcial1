@@ -3,8 +3,20 @@
         <app-tabla-cines [listaCines]="listaDeCines" (cineEmite)="agarraCine($event)"></app-tabla-cines>
     </div>
     
-    <div>
-        <app-detalle-cines style="width: 30%; margin-left: 5%;" [cineElegido]="cine" [emisiones]="cineE" *ngIf="hayCine"></app-detalle-cines>
+    <div style="width: 30%; margin: 2%;">
+        <app-detalle-cines style="width: 30%; margin-left: 5%;" [cineElegido]="cine" [emisiones]="cineE" *ngIf="hayCine" (cineEliminar)="eliminar($event)"></app-detalle-cines>
+    </div>
+
+    <div style="width: 10%; margin: 5%;">
+        <label for="busqueda" style="background-color: white; color: black;">Buscar Cines por pais</label>
+        <input [(ngModel)]="busquedaP" type="text">
+        <button (click)="filtrar()">aplicar filtro </button>
+
+        <label for="busqueda" style="background-color: white; color: black;">Buscar Cines por nombre</label>
+        <input [(ngModel)]="busquedaN" type="text">
+        <button (click)="filtrar()">aplicar filtro </button>
+        <br><br><br>
+        <button (click)="desfiltrar()">Quitar filtro</button>
     </div>
     
     </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { cine } from '../../clases/cine';
-import { emision } from 'src/app/clases/emision';
+import { emision } from '../../clases/emision';
+
 
 @Component({
   selector: 'app-detalle-cines',
@@ -10,7 +11,10 @@ import { emision } from 'src/app/clases/emision';
 export class DetalleCinesComponent implements OnInit {
   @Input() cineElegido:cine;
   @Input() emisiones:emision[];
+  @Output() cineEliminar:EventEmitter<any>=new EventEmitter<any>();
+  cine:cine;
   constructor() { 
+    
     
     
   }
@@ -20,4 +24,8 @@ export class DetalleCinesComponent implements OnInit {
     
   }
  
+  eliminarCine(cine:cine){
+    console.log("se lanzó" + cine.nombre);
+    this.cineEliminar.emit(cine);
+  }
 }

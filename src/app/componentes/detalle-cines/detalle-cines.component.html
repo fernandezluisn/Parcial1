@@ -7,5 +7,6 @@
 <label for="">peliculas en exibición</label>
         <p *ngFor="let emision of emisiones">{{emision.nombre}} dia {{emision.fecha}}</p>
 
+        <button type="button" class="btn btn-danger" style="width: 10rem; margin-left: 5rem; border-radius: 1rem;" (click)="eliminarCine(cineElegido)"> Deshabilitar cine</button>
 
 </div>

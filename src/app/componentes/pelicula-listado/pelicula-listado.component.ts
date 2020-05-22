@@ -37,7 +37,7 @@ export class PeliculaListadoComponent implements OnInit {
 
   tomarPeliParaBorrar(pelicula){
     this.servicio.borrarPelicula(pelicula);
-    
+    this.pelis=this.servicio.traerPeliculas();
   }
 
 }

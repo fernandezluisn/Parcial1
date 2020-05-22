@@ -137,6 +137,25 @@ registrarCine(cine1:cine):boolean{
   return true;
 }
 
+borrarCine(cine){
+  
+  let nuevaLista=this.traerCines();
+  
+  localStorage.removeItem(this.listaCines);
+  
+  nuevaLista.forEach(element=>{
+    if(element.nombre==cine.nombre && element.pais==cine.pais)
+    {
+      let n=nuevaLista.indexOf(element);
+      nuevaLista.splice(n,1);
+    }
+  });
+  
+  
+  localStorage.setItem(this.listaCines, JSON.stringify(nuevaLista));
+
+}
+
 /////peliculas//////////////////
 
 traerPeliculas():pelicula[]{
